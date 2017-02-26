@@ -18,7 +18,7 @@ var NoCurrentMovie = require('./components/NoCurrentMovie')
 var SortBar = require('./components/SortBar')
 
 // There should really be some JSON-formatted data in movies.json, instead of an empty array.
-// I started writing this command to extract the data from the learn-sql workspace 
+// I started writing this command to extract the data from the learn-sql workspace
 // on C9, but it's not done yet :) You must have the csvtojson command installed on your
 // C9 workspace for this to work.
 // npm install -g csvtojson
@@ -27,8 +27,8 @@ var SortBar = require('./components/SortBar')
 // Firebase configuration
 var Rebase = require('re-base')
 var base = Rebase.createClass({
-  apiKey: "...",   // replace with your Firebase application's API key
-  databaseURL: "...", // replace with your Firebase application's database URL
+  apiKey: "AIzaSyDbcdVtVe3NNhyXR0lpQVk5Rn2p_q3v6",   // replace with your Firebase application's API key
+  databaseURL: "https://buyflix-e3a5b.firebaseio.com/", // replace with your Firebase application's database URL
 })
 
 var App = React.createClass({
