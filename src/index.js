@@ -53,6 +53,9 @@ var App = React.createClass({
     })
   },
   viewChanged: function(view) {
+
+
+    
     // View is either "latest" (movies sorted by release), "alpha" (movies
     // sorted A-Z), or "map" (the data visualized)
     // We should probably do the sorting and setting of movies in state here.
