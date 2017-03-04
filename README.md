@@ -1,6 +1,8 @@
-# Buyflix Starter Project for KIEI-924
+# Jeff Winchester final project for KIEI 924
 
-## Getting Started
+# Thanks for a great quarter Brian!
+
+## Here's where my site lives: https://buyflix-e3a5b.firebaseapp.com/
 
 Upon download or clone:
 
