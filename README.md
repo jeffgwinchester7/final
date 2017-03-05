@@ -2,7 +2,7 @@
 
 # Thanks for a great quarter Brian!
 
-## Here's where my site lives: https://buyflix-e3a5b.firebaseapp.com/
+## Here's where my site lives: https://winchesterfinal.firebaseapp.com/
 
 Upon download or clone:
 

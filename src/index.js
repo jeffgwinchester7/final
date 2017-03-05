@@ -22,8 +22,8 @@ var MovieMap = require('./components/MovieMap')
 // Firebase configuration
 var Rebase = require('re-base')
 var base = Rebase.createClass({
-  apiKey: "AIzaSyDhRjOQWGZlli2WtpfLyNV4dkQNGUQ03g8",   // replace with your Firebase application's API key
-  databaseURL: "https://buyflix-final-72a7d.firebaseio.com/", // replace with your Firebase application's database URL
+  apiKey: "AIzaSyCP5m8zc-J1jB_P2S8QRRwHV10jaFO6qZc",   // replace with your Firebase application's API key
+  databaseURL: "https://winchesterfinal.firebaseio.com/", // replace with your Firebase application's database URL
 })
 
 var App = React.createClass({
@@ -48,15 +48,10 @@ var App = React.createClass({
     })
   },
 
-  // View is either "latest" (movies sorted by release), "alpha" (movies
-  // sorted A-Z), or "map" (the data visualized)
-  // We should probably do the sorting and setting of movies in state here.
-  // You should really look at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-
   viewChanged: function(view) {
 
     this.setState({
-      currentView: view
+      currentView: view,
     })
 
     if (view === "alpha") {
@@ -97,7 +92,6 @@ var App = React.createClass({
     if (this.state.currentView === 'map') {
       return < MovieMap />
       }
-
     else {
       return (
         <div>
@@ -107,7 +101,6 @@ var App = React.createClass({
       )
     }
   },
-
   movieCompareByTitle: function(movieA, movieB) {
     if (movieA.title < movieB.title) {
       return -1
@@ -130,19 +123,21 @@ var App = React.createClass({
     return {
       movies: movieData.sort(this.movieCompareByReleased),
       currentMovie: null,
-      currentView: 'latest'
+      currentView: 'latest',
+      latest: "active",
+      alpha: "",
+      map: ""
     }
   },
   componentDidMount: function() {
-    // We'll need to enter our Firebase configuration at the top of this file and
-    // un-comment this to make the Firebase database work
+
     base.syncState('/movies', { context: this, state: 'movies', asArray: true })
   },
   render: function() {
     return (
       <div>
         <Header currentUser={this.state.currentUser} />
-        <SortBar movieCount={this.state.movies.length} viewChanged={this.viewChanged} />
+        <SortBar movieCount={this.state.movies.length} viewChanged={this.viewChanged} latest={this.state.latest} alpha={this.state.alpha} map={this.state.map}/>
         <div className="main row">
           {this.renderMainSection()}
         </div>
