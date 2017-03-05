@@ -22,8 +22,8 @@ var MovieMap = require('./components/MovieMap')
 // Firebase configuration
 var Rebase = require('re-base')
 var base = Rebase.createClass({
-  apiKey: "AIzaSyDbcdVtVe3NNhyXR0lpQVk5Rn2p_q3v6",   // replace with your Firebase application's API key
-  databaseURL: "https://buyflix-e3a5b.firebaseio.com/", // replace with your Firebase application's database URL
+  apiKey: "AIzaSyDhRjOQWGZlli2WtpfLyNV4dkQNGUQ03g8",   // replace with your Firebase application's API key
+  databaseURL: "https://buyflix-final-72a7d.firebaseio.com/", // replace with your Firebase application's database URL
 })
 
 var App = React.createClass({
